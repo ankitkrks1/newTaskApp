@@ -33,5 +33,14 @@ Router.delete("/tasks/:id",async (req,res)=>{
   }
 
 })
-
+Router.delete('/tasks',async (req,res)=>{
+  try{
+    const task = await Task.deleteMany({})
+    if(!task){
+      res.status(404).send()
+    }res.status(200).send(task)
+  }catch(e){
+    res.send(e).status(500)
+  }
+})
 module.exports = Router;

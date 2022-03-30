@@ -2,6 +2,6 @@ const mongoose = require('mongoose')
 
 const url = process.env.MONGODB_URL
 
-// "mongodb://localhost:27017/newTaskApp"
+// process.env.MONGODB_URL
 mongoose.connect(url)
 
